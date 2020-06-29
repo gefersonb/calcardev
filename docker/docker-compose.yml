@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  db:
+    build: .
+    ports:
+      - "5432:5432"
+
+  wildfly:
+    image: gefdev/wildfly
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+
+  app:
+    image: gefdev/app
+    ports:
+      - "3000:3000"
+

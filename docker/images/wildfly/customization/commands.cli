@@ -1,0 +1,22 @@
+# Mark the commands below to be run as a batch
+batch
+
+
+
+/subsystem=datasources/jdbc-driver=postgres:add(driver-name=postgres, driver-module-name=org.postgresql, driver-class-name=org.postgresql.Driver)
+
+# /subsystem=datasources/jdbc-driver=mysql:\
+#  add(driver-name=mysql,driver-module-name=com.mysql,\
+#  driver-xa-datasource-class-name=com.mysql.jdbc.jdbc2.optional.MysqlXADataSource)
+
+data-source add --name=desafio --jndi-name=java:jboss/datasources/desafio --driver-name=postgres --connection-url=jdbc:postgresql://127.0.0.1:5432/desafio --user-name=postgres --password=1 --enabled=true
+
+
+#data-source add --name=MySqlDS\
+#  --driver-name=mysql --jndi-name=java:jboss/datasources/MySqlDS\
+#  --connection-url=jdbc:mysql://localhost:3306/mydb --user-name=myuser\
+#  --password=password --enabled=true
+
+
+# Execute the batch
+run-batch

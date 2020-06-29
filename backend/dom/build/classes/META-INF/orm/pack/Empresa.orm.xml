@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd" version="2.0">
+
+	<named-query name="Empresa.findAll">
+		<query>select e from Empresa e</query>
+	</named-query>
+
+    
+	<entity class="com.pack.entity.Empresa">
+		<table schema="public" name="empresa" />
+		<attributes>
+			<id name="codigo">
+				<column name="co_pessoa" />
+				
+			</id>
+			<basic name="nome">
+				<column name="ds_nome" />
+			</basic>
+			<basic name="endereco">
+				<column name="ds_endereco" />
+			</basic>
+		</attributes>
+	</entity>
+
+</entity-mappings>
